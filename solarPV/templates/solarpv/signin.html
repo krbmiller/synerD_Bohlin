@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>synerD - Home</title>
+<link rel="stylesheet" type ="text/css" href="{% static 'solarpv/styles.css' %}" />
+<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto" rel="stylesheet">
+<script src="{% static 'solarpv/scripts.js' %}"></script>
+</head>
+
+<body>
+	<div class="headbar">
+		<div class="header">
+			<div class="compName">
+				<img class="logo" src="{% static 'solarpv/logo.png' %}" />
+			</div>	
+			<div class="navs">
+				<div class="NavBar">
+					<ul>
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="#">Galleries</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="donate">
+					<h2>Synergy of Diaspora</h2>
+					<button class="donateButton">DONATE</button>
+				</div>
+				<div class="join">
+					<ul>
+						<li><a href="{% url 'signin' %}">Sign In</a></li>
+						<li>|</li>
+						<li><a href="{% url 'join' %}">Join Us</a></li>
+						<li>|</li>
+						<li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header2">
+			<ul>
+				<li><a href="#">OUR WORK</a></li>
+				<li><a href="#">MEMBERS</a></li>
+				<li><a href="#">RESOURCES</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="content">
+		<div class="join">
+			<h2>Sign In</h2>
+			<form oninput="validateField()">
+				<label></label>
+				<p>Username<input type="text" name="username" autofocus="true" /></p>
+				<p>Password<input type="password" name="password" /></p>
+				<p><input class="donateButton" type="submit" name="submit" /></p>
+			</form>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="footerMain">
+			<div class="contactFoot">
+				<span>synerD</span>
+				<span>4123 W. Main St</span>
+				<span>(555) 501-1234</span>
+				<span>contact@synerD.com</span>
+				<span>http://www.synerD.com</span>
+			</div>
+			<div class="footRight">
+				<ul>
+					<li><a href="#">Get Involved</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Ways to Give</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Revenues</a></li>
+					<li><a href="#">Expenditures</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="navBarFoot">
+			<ul>
+				<li><a href="#">Site Map</a></li>
+				<li>|</li>
+				<li><a href="#">Terms & Conditions</a></li>
+				<li>|</li>
+				<li><a href="#">Privacy Policy</a></li>
+				<li>|</li>
+				<li>Copyright @ 2019</li>
+			</ul>
+		</div>
+	</div>
+
+</body>

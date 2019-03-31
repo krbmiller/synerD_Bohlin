@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>synerD - Home</title>
+<link rel="stylesheet" type ="text/css" href="{% static 'solarpv/styles.css' %}" />
+<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto" rel="stylesheet">
+<script src="{% static 'solarpv/scripts.js' %}"></script>
+<script type="text/javascript">
+	getLocation()
+</script>
+</head>
+
+<body>
+	<div class="headbar">
+		<div class="header">
+			<div class="compName">
+				<img class="logo" src="{% static 'solarpv/logo.png' %}" />
+			</div>	
+			<div class="navs">
+				<div class="NavBar">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Galleries</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="donate">
+					<h2>Synergy of Diaspora</h2>
+					<button class="donateButton">DONATE</button>
+				</div>
+				<div class="join">
+					<ul>
+						<li><a href="{% url 'signin' %}">Sign In</a></li>
+						<li>|</li>
+						<li><a href="{% url 'join' %}">Join Us</a></li>
+						<li>|</li>
+						<li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header2">
+			<ul>
+				<li><a href="#">OUR WORK</a></li>
+				<li><a href="#">MEMBERS</a></li>
+				<li><a href="#">RESOURCES</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="content">
+		<div class="slider-container">
+			<img onclick="nextSlide(-1);" class="control back" src="{% static 'solarpv/chevron.svg' %}"/>
+
+		  <div class="slider">
+		    <div class="slide active give" id="slide-1">
+		    </div>
+		    <div class="slide charity" id="slide-2">
+		    </div>
+		    <div class="slide people" id="slide-3">
+		    </div>
+		  </div>
+
+		  <img onclick="nextSlide(1);"  class="control forward"  src="{% static 'solarpv/chevron.svg' %}"/>
+		</div>
+
+		<div class="main">
+			<div class="mainLeft">
+
+				<div class="tabs">
+					<div onclick="showContent('id-protection');">
+						ID Protection
+					</div>
+					<div onclick="showContent('corpses');">
+						Corpses Repartriation
+					</div>
+					<div onclick="showContent('assistance');"> 
+						Assistance Programs
+					</div>
+				</div>
+				<div class="tabContent">
+					<div class="tabCopy selected" id="id-protection">
+						<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ex vitae metus pellentesque luctus. Nunc venenatis mattis interdum. Suspendisse potenti. Praesent fermentum enim ut consequat ultricies. Nam eu molestie nulla. In facilisis, velit nec finibus commodo, quam orci eleifend ex, quis gravida risus ligula gravida odio. Cras convallis tortor quis mauris suscipit, id fringilla nisi posuere. Donec ullamcorper lacus velit. Donec venenatis dui tellus, ut molestie lorem ornare ut.</span>
+					</div>
+					<span class="tabCopy" id="corpses">Vivamus in tempor mi, tempor venenatis lacus. Nam id urna in mauris placerat auctor id id mi. Morbi venenatis quam fermentum egestas scelerisque. Proin non massa est. Nullam consectetur libero lorem, quis dignissim elit molestie at. Fusce nec purus ornare, congue ligula sit amet, dapibus sapien. Donec sapien risus, lobortis vel quam vitae, ornare scelerisque tortor. Praesent aliquam sodales enim, at fringilla nisl commodo et. Curabitur venenatis magna ut nibh tincidunt, nec vulputate orci accumsan. Quisque placerat ex sed mi bibendum, eget suscipit libero fringilla. Nunc enim nisi, luctus et lacus quis, semper auctor turpis. Cras faucibus nibh turpis, sed pharetra est venenatis sed. Etiam commodo libero dui, vel vulputate odio auctor vel. Phasellus blandit lacinia vestibulum.</span>
+					<div class="tabCopy" id="assistance">
+						<span>Sed sed congue lacus, quis lacinia risus. Nam erat lorem, tempus non tincidunt ullamcorper, dignissim et libero. Fusce ullamcorper felis odio, et gravida mauris efficitur sed. Nunc gravida vitae est vel posuere. Vestibulum sit amet imperdiet ipsum. Nulla facilisi. Donec a aliquet elit. Etiam eget neque suscipit, luctus tortor in, ullamcorper risus. Morbi accumsan ultricies odio. Vestibulum ex magna, facilisis non lacus ut, condimentum placerat ex.</span>
+						<h5>Move the logo to the drop zone!</h5>
+						<div id="dropzone" class="dropzone"
+							ondrop="drop(event)"
+							ondragover="allowDrop(event)">
+						</div>
+						<img id="logo" src="{% static 'solarpv/logo.png' %}"
+							draggable="true"
+							ondragstart="drag(event)"
+							height="69">
+					</div>
+				</div>
+			</div>
+			<div class="whatsnew">
+				<h4>What's new?</h4>
+				<a href="#" class="Announcements">
+					Announcements
+				</a>
+				<a href="#" class="featureNews">
+					Feature News
+				</a>
+			</div>
+		</div>
+
+		<div class="featureAct">
+			<h4>Feature Activity: Fun Run!</h4>
+			<span>Join us for our upcoming fun run to raise money for charity.</span>
+			<video class="video" width="320" height="240" controls loop autoplay muted>
+			 	<source src="{% static 'solarpv/running.m4v' %}" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="footerMain">
+			<div class="contactFoot">
+				<span>synerD</span>
+				<span>4123 W. Main St</span>
+				<span>(555) 501-1234</span>
+				<span>contact@synerD.com</span>
+				<span>http://www.synerD.com</span>
+			</div>
+			<div class="footRight">
+				<ul>
+					<li><a href="#">Get Involved</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Ways to Give</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Revenues</a></li>
+					<li><a href="#">Expenditures</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="navBarFoot">
+			<ul>
+				<li><a href="#">Site Map</a></li>
+				<li>|</li>
+				<li><a href="#">Terms & Conditions</a></li>
+				<li>|</li>
+				<li><a href="#">Privacy Policy</a></li>
+				<li>|</li>
+				<li>Copyright @ 2019</li>
+			</ul>
+		</div>
+	</div>
+
+</body>
