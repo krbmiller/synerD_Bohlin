@@ -44,13 +44,16 @@ function validateField () {
 	  case 'username':
 	    isValid = value.length <= 8;
 	    break;
+      case 'streetaddress':
+      case 'city':
+      case 'state':
 	  case 'zipcode':
 	  case 'phonenum':
 	  	isValid = (/^(?=.*[0-9])/).test(value);
 	  	break;
 	  case 'firstname':
+	  case 'lastname':
 	  case 'middlename':
-	  case 'memberOrg':
 	  	break;
 	  default:
 	  	isValid = !!value;

@@ -42,7 +42,7 @@
 		<div class="header2">
 			<ul>
 				<li><a href="#">OUR WORK</a></li>
-				<li><a href="#">MEMBERS</a></li>
+				<li><a href="{% url 'members' %}">MEMBERS</a></li>
 				<li><a href="#">RESOURCES</a></li>
 			</ul>
 		</div>
@@ -52,25 +52,25 @@
 	<div class="content">
 		<div class="join">
 			<h2>Join Us</h2>
-			<form oninput="validateField()">
+			<form oninput="validateField()" method="POST">
+				{% csrf_token %}
 				<label></label>
 				<p>Username<input type="text" name="username" autofocus="true" /></p>
 				<p>Password<input type="password" name="password" /></p>
 				<p>First name<input type="text" name="firstname" /></p>
 				<p>Middle name<input type="text" name="middlename" /></p>
 				<p>Last name<input type="text" name="lastname" /></p>
-				<p>Gender  
-					<input type="radio" name="gender" value="Female" />Female
-					<input type="radio" name="gender" value="Male" />Male
-				</p>
 				<p>Street Address
 					<input type="text" name="streetaddress" />
+				</p>
+				<p>Street Address (Line 2)
+					<input type="text" name="streetaddress2" />
 				</p>
 				<p>City
 					<input type="text" name="city" />
 				</p>
 				<p>State
-					<select>
+					<select name='state'>
 						<option value="AL">Alabama</option>
 						<option value="AK">Alaska</option>
 						<option value="AZ">Arizona</option>
@@ -130,34 +130,31 @@
 				<p>Email
 					<input type="text" name="email" />
 				</p>
-				<p>Cell Phone Number
+				<p>Home Phone Number
 					<input type="text" name="phonenum" />
 				</p>
-				<p>Country of Origin
-					<input type="text" name="origincountry" />
+				<p>Cell Phone Number
+					<input type="text" name="cellphonenum" />
 				</p>
 				<p>Date of Birth
 					<select name="birthMonth">
-					  <option value="Jan">Jan</option>
-					  <option value="Feb">Feb</option>
-					  <option value="Mar">Mar</option>
-					  <option value="Apr">Apr</option>
-					  <option value="May">May</option>
-					  <option value="June">June</option>
-					  <option value="July">July</option>
-					  <option value="Aug">Aug</option>
-					  <option value="Sept">Sept</option>
-					  <option value="Oct">Oct</option>
-					  <option value="Nov">Nov</option>
-					  <option value="Dec">Dec</option>
+					  <option value=1>Jan</option>
+					  <option value=2>Feb</option>
+					  <option value=3>Mar</option>
+					  <option value=4>Apr</option>
+					  <option value=5>May</option>
+					  <option value=6>June</option>
+					  <option value=7>July</option>
+					  <option value=8>Aug</option>
+					  <option value=9>Sept</option>
+					  <option value=10>Oct</option>
+					  <option value=11>Nov</option>
+					  <option value=12>Dec</option>
 					</select>
 					<input type="text" name="birthDay" placeholder="Day" />
 					<input type="text" name="birthYear" placeholder="Year" />
 				</p>
-				<p>Member Organization
-					<input type="text" name="memberOrg" />
-				</p>
-				<p><input class="donateButton" type="submit" name="submit" /></p>
+				<p><input class="donateButton" type="submit" name="submit" value="Create User" /></p>
 			</form>
 		</div>
 	</div>

@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^solarpv/',include('solarPV.urls'))
+    url(r'^solarpv/',include('solarPV.urls')),
+	url(r'^api/',include('backend.api.urls',namespace='api'))
 ]
